@@ -83,7 +83,6 @@ class TaskIcon extends Container {
         gr.endFill();
         gr.pivot.set(100, 130);
         gr.eventMode = 'static';
-        gr.cursor = 'pointer';
         gr.on('pointertap', () => {
             emitter.emit('task', this._id);
         });

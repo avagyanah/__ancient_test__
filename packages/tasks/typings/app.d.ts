@@ -7,6 +7,7 @@ export declare global {
         start: [time: number];
         resize: [width: number, height: number];
         task: [id: number];
+        menu: [];
     };
 
     interface IDimension {

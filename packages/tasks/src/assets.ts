@@ -7,6 +7,7 @@ export const assets = {
 
     images: {
         bg: require('../assets/images/bg.jpg'),
+        back: require('../assets/images/back.png'),
         card: require('../assets/images/card.png'),
         cardDeck: require('../assets/images/card-deck.png'),
     },
