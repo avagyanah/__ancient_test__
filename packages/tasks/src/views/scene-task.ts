@@ -1,26 +1,11 @@
 import { Sprite } from 'pixi.js';
 import { emitter } from '../const';
 import type { IGridConfig } from '../grid';
-import { CellAlign, Grid } from '../grid';
-import { Task1 } from './tasks/task1';
-import { Task2 } from './tasks/task2';
-import { Task3 } from './tasks/task3';
-
-const getGridConfig = (width: number, height: number): IGridConfig => {
-    return {
-        debug: { color: 0xff0000 },
-
-        area: { x: 0, y: 0, width, height },
-
-        cells: [
-            {
-                name: 'back',
-                align: CellAlign.leftTop,
-                bounds: { x: 0.02, y: 0.02, width: 0.1, height: 1 },
-            },
-        ],
-    };
-};
+import { Grid } from '../grid';
+import { getTaskSceneGridConfig } from './grid-configs';
+import { Task1 } from './tasks/task1/task1';
+import { Task2 } from './tasks/task2/task2';
+import { Task3 } from './tasks/task3/task3';
 
 export class TaskScene extends Grid {
     private _task?: ITaskView;
@@ -33,11 +18,11 @@ export class TaskScene extends Grid {
     }
 
     public getGridConfig(): IGridConfig {
-        return getGridConfig(0, 0);
+        return getTaskSceneGridConfig(0, 0);
     }
 
     public resize(w: number, h: number): void {
-        this.rebuild(getGridConfig(w, h));
+        this.rebuild(getTaskSceneGridConfig(w, h));
         this._task?.resize(w, h);
     }
 

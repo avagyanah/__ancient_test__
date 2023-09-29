@@ -3,32 +3,7 @@ import { assets } from '../assets';
 import { emitter } from '../const';
 import type { IGridConfig } from '../grid';
 import { Grid } from '../grid';
-
-const getGridConfig = (width: number, height: number): IGridConfig => {
-    return {
-        debug: { color: 0xff0000 },
-
-        area: { x: 0, y: 0, width, height },
-
-        cells: [
-            {
-                name: 'icon1',
-                bounds: { x: 0, y: 0, width: 1 / 3, height: 1 },
-                padding: { x: 0.1, y: 0.1, width: 0.8, height: 0.8 },
-            },
-            {
-                name: 'icon2',
-                bounds: { x: 1 / 3, y: 0, width: 1 / 3, height: 1 },
-                padding: { x: 0.1, y: 0.1, width: 0.8, height: 0.8 },
-            },
-            {
-                name: 'icon3',
-                bounds: { x: 2 / 3, y: 0, width: 1 / 3, height: 1 },
-                padding: { x: 0.1, y: 0.1, width: 0.8, height: 0.8 },
-            },
-        ],
-    };
-};
+import { getMenuSceneGridConfig } from './grid-configs';
 
 export class MenuScene extends Grid {
     private _icon1!: TaskIcon;
@@ -43,11 +18,11 @@ export class MenuScene extends Grid {
     }
 
     public getGridConfig(): IGridConfig {
-        return getGridConfig(0, 0);
+        return getMenuSceneGridConfig(0, 0);
     }
 
     public resize(w: number, h: number): void {
-        this.rebuild(getGridConfig(w, h));
+        this.rebuild(getMenuSceneGridConfig(w, h));
     }
 
     public show(): void {

@@ -1,11 +1,14 @@
 import gsap from 'gsap';
-import { Container, Sprite, Texture } from 'pixi.js';
-import type { TickerTask } from '../../plugins/ticker-plugin';
+import { Container, Texture } from 'pixi.js';
+import type { TickerTask } from '../../../plugins/ticker-plugin';
+import { Card, cardFrames } from './card';
+import { Stack } from './stack';
 
 export class Task1 extends Container implements ITaskView {
     private _config = { cardsCount: 144, cardHeight: 210 };
     private _tweens: gsap.core.Tween[] = [];
     private _animationTask!: TickerTask;
+
     private _stack1!: Stack;
     private _stack2!: Stack;
 
@@ -39,13 +42,15 @@ export class Task1 extends Container implements ITaskView {
 
         this.addChild(this._stack1);
         this.addChild(this._stack2);
+
+        this._stack1.y = 50;
+        this._stack2.y = 50;
     }
 
     private _buildCards(): void {
         const { cardsCount } = this._config;
-
-        for (let i = 0; i <= cardsCount; i++) {
-            const card = new Card(Texture.from('card-001'));
+        for (let i = 0; i < cardsCount; i++) {
+            const card = new Card(Texture.from(cardFrames[i % (cardFrames.length - 1)]));
             this._stack1.pushCard(card);
         }
     }
@@ -54,7 +59,7 @@ export class Task1 extends Container implements ITaskView {
         this._animationTask = window.globals.app.tickerPlugin
             .task({
                 delay: 1,
-                repeat: this._config.cardsCount + 1,
+                repeat: this._config.cardsCount,
             })
             .on('repeat', () => {
                 this._moveCard();
@@ -93,65 +98,9 @@ export class Task1 extends Container implements ITaskView {
         this._stack2.position.x = width * 0.7;
 
         const { cardsCount, cardHeight } = this._config;
-        const gap = (height - cardHeight - 60) / cardsCount;
+        const gap = (height - cardHeight - 50) / cardsCount;
 
         this._stack1.adjustGap(gap);
         this._stack2.adjustGap(gap);
-    }
-}
-
-class Stack extends Container {
-    private _cards: Card[] = [];
-    private _gap = 0;
-
-    public constructor() {
-        super();
-
-        const back = Sprite.from('card-empty');
-        back.anchor.set(0.5, 0);
-        this.addChild(back);
-    }
-
-    public getLast(): Card | undefined {
-        return this._cards[this._cards.length - 1];
-    }
-
-    public hasCard(): boolean {
-        return this._cards.length > 0;
-    }
-
-    public adjustGap(gap: number): void {
-        this._gap = gap;
-
-        this._cards.forEach((card, i) => {
-            card.position.y = i * gap;
-        });
-    }
-
-    public pushCard(card: Card): Card {
-        this._cards.push(card);
-        this.addChild(card);
-
-        card.position.y = (this._cards.length - 1) * this._gap;
-
-        return card;
-    }
-
-    public popCard(): Card {
-        const index = this._cards.length - 1;
-        const card = this._cards[index];
-
-        this._cards.splice(index, 1);
-        this.removeChild(card);
-
-        return card;
-    }
-}
-
-class Card extends Sprite {
-    public constructor(texture: Texture) {
-        super(texture);
-
-        this.anchor.set(0.5, 0);
     }
 }
