@@ -1,6 +1,6 @@
+import type { IGridConfig } from '@gameastic/pixi-grid';
+import { Grid } from '@gameastic/pixi-grid';
 import { random, sample, shuffle } from 'lodash-es';
-import type { IGridConfig } from '../../../grid';
-import { Grid } from '../../../grid';
 import type { TickerTask } from '../../../plugins/ticker-plugin';
 import { getTask2GridConfig } from '../../grid-configs';
 import { Component } from './component';

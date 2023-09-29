@@ -1,7 +1,7 @@
+import type { IGridConfig } from '@gameastic/pixi-grid';
+import { Grid } from '@gameastic/pixi-grid';
 import { Sprite } from 'pixi.js';
 import { emitter } from '../const';
-import type { IGridConfig } from '../grid';
-import { Grid } from '../grid';
 import { getTaskSceneGridConfig } from './grid-configs';
 import { Task1 } from './tasks/task1/task1';
 import { Task2 } from './tasks/task2/task2';

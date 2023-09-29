@@ -1,9 +1,7 @@
-import { CellAlign, CellScale, type IGridConfig } from '../grid';
+import { CellAlign, CellScale, type IGridConfig } from '@gameastic/pixi-grid';
 
 export const getMenuSceneGridConfig = (width: number, height: number): IGridConfig => {
     return {
-        debug: { color: 0xff0000 },
-
         area: { x: 0, y: 0, width, height },
 
         cells: [
@@ -28,8 +26,6 @@ export const getMenuSceneGridConfig = (width: number, height: number): IGridConf
 
 export const getTaskSceneGridConfig = (width: number, height: number): IGridConfig => {
     return {
-        debug: { color: 0xff0000 },
-
         area: { x: 0, y: 0, width, height },
 
         cells: [
@@ -44,7 +40,6 @@ export const getTaskSceneGridConfig = (width: number, height: number): IGridConf
 
 export const getTask2GridConfig = (width: number, height: number): IGridConfig => {
     return {
-        debug: { color: 0xff0000 },
         area: { x: 0, y: 0, width, height },
         cells: [
             {
@@ -57,7 +52,6 @@ export const getTask2GridConfig = (width: number, height: number): IGridConfig =
 
 export const getTask3GridConfig = (width: number, height: number): IGridConfig => {
     return {
-        debug: { color: 0xff0000 },
         area: { x: 0, y: 0, width, height },
         cells: [
             {

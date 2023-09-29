@@ -1,8 +1,8 @@
+import type { IGridConfig } from '@gameastic/pixi-grid';
+import { Grid } from '@gameastic/pixi-grid';
 import { Container, Graphics, Text } from 'pixi.js';
 import { assets } from '../assets';
 import { emitter } from '../const';
-import type { IGridConfig } from '../grid';
-import { Grid } from '../grid';
 import { getMenuSceneGridConfig } from './grid-configs';
 
 export class MenuScene extends Grid {

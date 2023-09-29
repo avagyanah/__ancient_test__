@@ -1,9 +1,9 @@
+import type { IGridConfig } from '@gameastic/pixi-grid';
+import { Grid } from '@gameastic/pixi-grid';
 import type { EmitterConfigV3 } from '@pixi/particle-emitter';
 import { Emitter, upgradeConfig } from '@pixi/particle-emitter';
 import { ParticleContainer } from 'pixi.js';
 import { assets } from '../../../assets';
-import type { IGridConfig } from '../../../grid';
-import { Grid } from '../../../grid';
 import { getTask3GridConfig } from '../../grid-configs';
 
 export const getFireParticlesConfig = (): EmitterConfigV3 => {
