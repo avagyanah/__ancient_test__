@@ -16,8 +16,13 @@ export const assets = {
         },
     },
 
+    particles: {
+        fire: require('../assets/particles/fire.json'),
+    },
+
     images: {
-        //
+        particle01: require('../assets/images/particle01.png'),
+        particle02: require('../assets/images/particle02.png'),
     },
 
     fonts: {
