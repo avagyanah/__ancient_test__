@@ -1,7 +1,8 @@
-import { Application } from 'pixi.js';
+import { Application, UPDATE_PRIORITY } from 'pixi.js';
 import { emitter } from './const';
 import { LoaderPlugin } from './plugins/loader-plugin';
 import { ScreenPlugin } from './plugins/screen-plugin';
+import { StatsPlugin } from './plugins/stats-plugin';
 import { TickerPlugin } from './plugins/ticker-plugin';
 import { getElementById, getResolution } from './utils';
 import { Stage } from './views/stage';
@@ -12,6 +13,7 @@ export class App extends Application {
     public readonly tickerPlugin: TickerPlugin;
     public readonly loaderPlugin: LoaderPlugin;
     public readonly screenPlugin: ScreenPlugin;
+    public readonly statsPlugin: StatsPlugin;
 
     public constructor() {
         super({
@@ -30,6 +32,9 @@ export class App extends Application {
         this.tickerPlugin = new TickerPlugin();
         this.loaderPlugin = new LoaderPlugin();
         this.screenPlugin = new ScreenPlugin();
+        this.statsPlugin = new StatsPlugin(this);
+
+        this.ticker.add(this.statsPlugin.update, undefined, UPDATE_PRIORITY.UTILITY);
     }
 
     public async preload(): Promise<void> {
