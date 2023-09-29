@@ -14,20 +14,23 @@ export class Stage extends Container {
     public constructor() {
         super();
 
-        this.addChild((this._menu = new MenuScene()));
-        this.addChild((this._task = new TaskScene()));
-
         emitter.on('task', this._onTaskClick, this);
         emitter.on('menu', this._onMenuClick, this);
     }
 
     public show(): void {
+        this.addChild((this._menu = new MenuScene()));
+        this.addChild((this._task = new TaskScene()));
+
         this._menu.show();
+
+        /* temp */
+        // this._onTaskClick(1);
     }
 
     public resize(w: number, h: number): void {
-        this._menu.resize(w, h);
-        this._task.resize(w, h);
+        this._menu?.resize(w, h);
+        this._task?.resize(w, h);
     }
 
     private _onTaskClick(taskId: number): void {

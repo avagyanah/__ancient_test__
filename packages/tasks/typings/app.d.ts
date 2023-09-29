@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/consistent-type-imports */
+import type { Container } from 'pixi.js';
 
 export declare global {
-    type IApp = import('../src/app').App;
-
     type AppEvents = {
         start: [time: number];
         resize: [width: number, height: number];
@@ -20,5 +18,10 @@ export declare global {
     interface ITickerTaskConfig {
         delay: number;
         repeat?: number;
+    }
+
+    interface ITaskView extends Container {
+        dispose: () => void;
+        resize: (width: number, height: number) => void;
     }
 }

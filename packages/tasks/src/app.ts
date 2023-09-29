@@ -37,8 +37,8 @@ export class App extends Application {
     }
 
     public async show(): Promise<void> {
-        this.screenPlugin.resize();
         this.stage.show();
+        this.screenPlugin.resize();
     }
 
     private _onResize(width: number, height: number): void {
