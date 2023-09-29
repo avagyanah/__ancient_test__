@@ -1,0 +1,31 @@
+{
+    "extends": "../../tsconfig.json",
+
+    "include": ["src"],
+
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDirs": ["src"],
+
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": ["ESNext", "DOM"],
+
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "isolatedModules": true,
+
+        "allowJs": true
+    },
+
+    "ts-node": {
+        "files": true,
+        "transpileOnly": true,
+        "emit": false,
+        "typeCheck": false,
+
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}

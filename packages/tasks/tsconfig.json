@@ -1,0 +1,22 @@
+{
+    "extends": "../../tsconfig.json",
+
+    "include": ["src", "typings"],
+    "exclude": ["dist"],
+
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDirs": ["src"],
+        "outDir": "dist",
+
+        "target": "ESNext",
+        "module": "ESNext",
+
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+
+        "removeComments": true,
+        "noEmit": true,
+        "noEmitHelpers": true
+    }
+}

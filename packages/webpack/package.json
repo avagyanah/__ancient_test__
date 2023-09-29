@@ -1,0 +1,25 @@
+{
+    "name": "@demo/webpack",
+    "version": "1.0.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "lint": "eslint '**/*.{js,ts}' && tsc --noEmit"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "ts-node": "^10.9.1",
+        "handlebars": "^4.7.8",
+        "css-loader": "^6.7.4",
+        "sass-loader": "^13.3.0",
+        "style-loader": "^3.3.3",
+        "esbuild-loader": "^4.0.2",
+        "handlebars-loader": "^1.7.3",
+        "webpack": "^5.88.2",
+        "webpack-dev-server": "^4.15.1",
+        "webpack-merge": "^5.9.0",
+        "html-webpack-plugin": "^5.5.3",
+        "terser-webpack-plugin": "^5.3.9",
+        "fork-ts-checker-webpack-plugin": "^8.0.0"
+    }
+}
