@@ -11,9 +11,12 @@
         "start": "npm run cleanup && ts-node ../webpack/src/commands/start.ts",
         "build": "npm run cleanup && ts-node ../webpack/src/commands/build.ts"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@types/lodash-es": "^4.17.9"
+    },
     "dependencies": {
         "pixi.js": "^7.2.4",
-        "gsap": "^3.12.2"
+        "gsap": "^3.12.2",
+        "lodash-es": "^4.17.21"
     }
 }

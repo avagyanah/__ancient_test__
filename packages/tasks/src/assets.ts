@@ -10,13 +10,14 @@ export const assets = {
             image: require('../assets/atlases/task1.png'),
             json: require('../assets/atlases/task1.json'),
         },
+        task2: {
+            image: require('../assets/atlases/task2.png'),
+            json: require('../assets/atlases/task2.json'),
+        },
     },
 
     images: {
-        // bg: require('../assets/images/bg.jpg'),
-        // 'back-btn': require('../assets/images/back-btn.png'),
-        // card: require('../assets/images/card.png'),
-        // cardDeck: require('../assets/images/card-deck.png'),
+        //
     },
 
     fonts: {

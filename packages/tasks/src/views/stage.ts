@@ -25,7 +25,7 @@ export class Stage extends Container {
         this._menu.show();
 
         /* temp */
-        // this._onTaskClick(1);
+        this._onTaskClick(2);
     }
 
     public resize(w: number, h: number): void {

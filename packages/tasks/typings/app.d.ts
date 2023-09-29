@@ -24,4 +24,16 @@ export declare global {
         dispose: () => void;
         resize: (width: number, height: number) => void;
     }
+
+    interface IPoint {
+        x: number;
+        y: number;
+    }
+
+    interface IRect {
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+    }
 }

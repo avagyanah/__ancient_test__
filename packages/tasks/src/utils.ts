@@ -4,7 +4,6 @@ export const getElementById = <T = HTMLElement>(id: string): T => {
 
 export function getResolution(): number {
     return 1;
-    return window.devicePixelRatio;
 }
 
 export const getWindowSize = (): IDimension => {

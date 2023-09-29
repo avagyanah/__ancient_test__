@@ -93,7 +93,7 @@ export class Task1 extends Container implements ITaskView {
         this._stack2.position.x = width * 0.7;
 
         const { cardsCount, cardHeight } = this._config;
-        const gap = (height - cardHeight) / cardsCount;
+        const gap = (height - cardHeight - 60) / cardsCount;
 
         this._stack1.adjustGap(gap);
         this._stack2.adjustGap(gap);
